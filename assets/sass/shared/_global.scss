@@ -1,0 +1,18 @@
+
+@use "../config/variables";
+@use "../config/utilities";
+
+body {
+    margin: 0;
+    font-family: monospace;
+    background: url('/assets/bg.webp') repeat, variables.$ss-background-color;
+    color: variables.$ss-secondary-color;
+}
+
+main {
+    margin-top: utilities.handleModifySizeToRem(32);
+
+    @media(min-width: 768px) {
+        margin-top: utilities.handleModifySizeToRem(33);
+    }
+}

@@ -7,6 +7,13 @@
         "background_color": "#ffffff"
       }
     },
+    "featured-header": {
+      "type": "featured-header",
+      "settings": {
+        "heading": "Hello word",
+        "background_color": "#000"
+      }
+    },
     "hero-banner": {
       "type": "hero-banner",
       "settings": {

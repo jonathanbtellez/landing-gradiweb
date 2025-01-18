@@ -1,0 +1,44 @@
+@use "../config/variables";
+@use "../config/utilities";
+
+.topbar {
+    display: flex;
+    width: 100%;
+    height: utilities.handleModifySizeToRem(8);
+    align-items: center;
+    background-color: variables.$ss-primary-color;
+
+    &__content {
+        --gap: 1rem;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+    }
+
+    &__content__text {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        gap: var(--gap);
+        min-width: 100%;
+        animation: scroll 15s linear infinite;
+    
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+}
+
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}

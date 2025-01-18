@@ -1,0 +1,11 @@
+@use "../config/variables";
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: variables.$ss-background-color-nav;
+    backdrop-filter: blur(16);
+}
