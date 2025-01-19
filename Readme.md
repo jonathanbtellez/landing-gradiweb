@@ -1,126 +1,20 @@
-# Shopify Simulator Documentation
 
-Welcome to **Shopify Simulator**, a lightweight environment designed to help developers explore Shopify's Liquid templating language and dynamic section-based architecture. This project simulates Shopify's core functionalities, enabling developers to practice creating reusable components, iterating through data, and working with dynamic settings.
 
----
+## **Instructiones para levantar el proyecto**
 
-## **Project Structure**
-
-```
-/simulator
-├── /config
-│   ├── settings_schema.json      # Defines configurable settings for sections
-│   ├── settings_data.json        # Stores dynamic data for rendering sections
-├── /data
-│   ├── products.json             # Sample product data
-│   ├── collections.json          # Sample collection data
-├── /public
-│   ├── styles.css                # Compiled CSS file
-│   ├── main.js                   # Compiled JavaScript file
-├── /sections
-│   ├── featured-products.liquid  # Main section rendering product lists
-├── /snippets
-│   ├── product-card.liquid       # Reusable snippet for individual product cards
-├── /templates
-│   ├── index.liquid              # Main template file
-├── /src
-│   ├── styles.scss               # Base SASS file
-│   ├── app.js                    # Base JavaScript logic
-├── /assets                       # Images for products, banners, and collections
-├── package.json
-├── webpack.config.js
-├── server.js
-```
-
----
-
-## **Liquid Basics**
-
-Liquid is a templating language used in Shopify to dynamically render content. Below are the key concepts you'll use in this simulator:
-
-### **Sections**
-
-Sections are modular components that render specific parts of a page. For example, the `featured-products.liquid` file is a section that displays a list of products. Sections can:
-
-- Access dynamic data from `settings_data.json`.
-- Be configured through a schema defined in `settings_schema.json`.
-
-Example:
-
-```liquid
-<section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
-</section>
-```
-
-### **Snippets**
-
-Snippets are reusable components, such as a product card. You can include a snippet using the `{% render %}` tag:
-
-Example:
-
-```liquid
-<div class="product-list">
-  {% for product in products %}
-    {% render 'product-card', product: product %}
-  {% endfor %}
-</div>
-```
-
-### **Iterating Over Objects**
-
-Liquid allows you to iterate over arrays, such as products or collections:
-
-```liquid
-<ul>
-  {% for product in products %}
-    <li>{{ product.title }} - ${{ product.price }}</li>
-  {% endfor %}
-</ul>
-```
-
-### **Filters**
-
-Filters are used to manipulate output. Some common filters:
-
-- `capitalize`: Capitalizes the first letter.
-- `date`: Formats a date.
-- `money`: Formats a number as currency.
-
-Example:
-
-```liquid
-{{ product.price | money }}
-{{ product.created_at | date: "%B %d, %Y" }}
-```
-
----
-
-## **Dynamic Configuration**
-
-### **Schema (`settings_schema.json`)**
-
-The schema defines the settings available for a section. While it's necessary in Shopify, it might not be required here.
-
-### **Data (`settings_data.json`)**
-
-This file contains the dynamic values for settings
-
-## **Setup Instructions**
-
-### **Install Dependencies**
+### **Instalar Dependencias**
 
 ```bash
 npm install
 ```
 
-### **Run the Server**
+### **Correr el servidor**
 
 ```bash
 npm start
 ```
 
-### **Build Styles and Scripts**
+### **Crear estilos y scripts**
 
 ```bash
 npm run build
@@ -128,18 +22,42 @@ npm run build
 
 ---
 
-## **Additional Notes**
+## **Notas Adicionales**
 
-### **Assets**
+Para la solucion de esta pruba tecnica se usaron diferentes enfoques que permitieron llegar al resultado presentado 
 
-All product, banner, and collection images are stored in the `/assets` folder. Refer to the `data/products.json` and `data/collections.json` files for mappings.
+### Estilos
 
-### **Testing the Application**
+Los estilos se encuentran el la carpeta assets/sass la cual esta dividida en diferente folder que separan modularmente los estilos de la landing
 
-Visit `http://localhost:3000` in your browser to view the simulator in action.
+#### Components
 
----
+Los archivos aqui se encargan de manejar los estilos usados para las secciones
 
-Feel free to customize the simulator further to match your requirements. Happy coding! 🚀
+####  Config 
 
-For more information about Liquid, refer to the [official Liquid documentation](https://liquidjs.com/tutorials/intro-to-liquid.html).
+En este folder se encuentran funciones variables y el archivo base que se encarga de hacer un pequeño reset de los estilos del navegador
+
+#### Shared
+
+En este folder se encuentra los archivos de estilos que se comparten entre otro componentes o son globales
+
+### Dinamismo 
+
+Para evitar la duplicidad de codigo se uso en vario casoss funciones o sintaxis de liquid.
+
+Se creo un archivo en la carpeta assets/js un archivo index.js el cual controla el evento "click" para dar la funcionalidad del menu mobile
+
+
+### Mejoras
+
+* Para el desarrollo aunque se uso la metodologia BEM para orientar el desarollo, se puede mejorar los estilos aplicados evitando redundancias y duplicidad
+
+* Creacion de snippets para evidar la duplicidad de codigo html, se evidencio que los componentes con efecto marquee tienen la misma estructura por lo cual es señal de que se puede mejorar el codigo implemtado para esto
+
+* Añadir seccion productos
+
+
+
+
+
