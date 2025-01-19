@@ -22,7 +22,13 @@ app.use(express.static('public'));
 
 app.get('/assets/imgs/:filename', (req, res) => {
   const filename = req.params.filename;
-  const filePath = path.join(__dirname, 'assets/imgs', filename); // Ruta completa al archivo
+  const filePath = path.join(__dirname, 'assets/imgs', filename);
+  res.sendFile(filePath);
+});
+
+app.get('/assets/js/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const filePath = path.join(__dirname, 'assets/js', filename);
   res.sendFile(filePath);
 });
 

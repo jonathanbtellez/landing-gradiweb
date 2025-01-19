@@ -28,6 +28,10 @@ main {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -167,6 +171,12 @@ main {
   visibility: visible;
   cursor: pointer;
 }
+.header-menu__button--close {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+}
 .header-menu__empty__container {
   width: 0;
 }
@@ -179,6 +189,45 @@ main {
   .header-menu__empty__container {
     width: 48px;
   }
+}
+.header-menu__mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+.header-menu__mobile--active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+.header-menu__mobile__content {
+  position: fixed;
+  border-radius: 0.5rem;
+  top: 4rem;
+  left: 1.5rem;
+  background-color: #762CFB;
+  padding: 0.5rem;
+  width: calc(100% - 3rem);
+  z-index: 20;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.header-menu__mobile__box {
+  margin-bottom: 0.75rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.header-menu__mobile__text {
+  font-weight: 700;
+  line-height: 2.5rem;
 }
 
 .header-logo {
@@ -274,6 +323,18 @@ main {
 .header-payments__item {
   opacity: 1;
   transform: none;
+}
+.header-payments__box {
+  border-radius: 10rem;
+  border: 1px solid #FFFFFF;
+}
+.header-payments__items {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 10rem;
 }
 
 .header-payments-list {
