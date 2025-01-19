@@ -44,7 +44,7 @@ En este folder se encuentra los archivos de estilos que se comparten entre otro 
 
 ### Dinamismo 
 
-Para evitar la duplicidad de codigo se uso en vario casoss funciones o sintaxis de liquid.
+Para evitar la duplicidad de codigo se uso en funciones o sintaxis de liquid.
 
 Se creo un archivo en la carpeta assets/js un archivo index.js el cual controla el evento "click" para dar la funcionalidad del menu mobile
 
@@ -52,9 +52,9 @@ Se creo un archivo en la carpeta assets/js un archivo index.js el cual controla 
 
 * Para el desarrollo aunque se uso la metodologia BEM para orientar el desarollo, se puede mejorar los estilos aplicados evitando redundancias y duplicidad
 
-* Creacion de snippets para evidar la duplicidad de codigo html, se evidencio que los componentes con efecto marquee tienen la misma estructura por lo cual es señal de que se puede mejorar el codigo implemtado para esto
+* Creacion de snippets para evidar la duplicidad de codigo html, se evidencio que los componentes con efecto marquee tienen la misma estructura por lo cual es señal de que se puede mejorar el codigo.
 
-* Añadir seccion productos
+* Añadir seccion productos.
 
 
 
