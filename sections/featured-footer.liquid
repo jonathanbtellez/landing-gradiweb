@@ -1,12 +1,4 @@
 <footer class="featured-footer">
-  {% comment %}
-    <h2>{{ settings['featured-products'].settings.heading }}</h2>
-    <div class="product-list">
-      {% for product in products %}
-        {% render 'product-card', product: product %}
-      {% endfor %}
-    </div>
-  {% endcomment %}
   <div class="footer">
     <div class="footer--active">
       <div class="footer-laptop">
@@ -18,10 +10,7 @@
           <p class="footer-laptop__logo--text">STORE</p>
         </div>
         <p class="footer-laptop__rights">
-          © 2024, Shuffle.store Operated by
-          <!--  -->
-          <a href="https://studioplaid.co"> Studio Plaid.</a> Need help?<br>
-          <a href="mailto:support@shuffle.store">Email support@shuffle.store</a>
+          {{settings.footer.settings.logo_text}}
         </p>
       </div>
     </div>
@@ -211,8 +200,8 @@
       </div>
       <div class="footer--active">
         <p class="footer-laptop__rights">
-          © 2024, Shuffle.store Operated by Studio Plaid. Need help?<br>
-          <a href="mailto:support@shuffle.store">Email support@shuffle.store</a>
+          {{settings.footer.settings.logo_text}}<br>
+        
         </p>
       </div>
     </div>
