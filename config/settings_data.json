@@ -36,13 +36,13 @@
       "settings": {
         "logo_text": "MyShopify",
         "links": [
-          { "label": "Home", "url": "/" },
-          { "label": "Cart", "url": "/cart" },
-          { "label": "All Products", "url": "/collections/all" },
-          { "label": "Collections", "url": "/collections" },
-          { "label": "Refund Policy", "url": "/refund-policy" },
-          { "label": "Privacy Policy", "url": "/privacy-policy" },
-          { "label": "Terms of Service", "url": "/terms-of-service" }
+          { "label": "Home", "url": "/", "type": "page" },
+          { "label": "Cart", "url": "/cart",  "type": "page" },
+          { "label": "All Products", "url": "/collections/all",  "type": "page" },
+          { "label": "Collections", "url": "/collections",  "type": "page" },
+          { "label": "Refund Policy", "url": "/refund-policy", "type": "about" },
+          { "label": "Privacy Policy", "url": "/privacy-policy", "type": "about" },
+          { "label": "Terms of Service", "url": "/terms-of-service", "type": "about" }
         ]
       }
     }
