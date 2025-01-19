@@ -68,11 +68,11 @@
       display: block;
       font-size: utilities.handleModifySizeToRem(12);
       line-height: utilities.handleModifySizeToRem(18);
-    
+
       @media (min-width: 576px) {
         font-size: utilities.handleModifySizeToRem(18);
       }
-    
+
       @media (min-width: 768px) {
         display: none;
       }
@@ -106,11 +106,30 @@
   &__image {
     position: relative;
     height: utilities.handleModifySizeToRem(100);
-    background-image: var(--background-image);
-    background-size: cover;
     border-radius: utilities.handleModifySizeToRem(2);
-    background-position: 50%;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: var(--background-image);
+      background-size: cover;
+      background-position: 50%;
+      transition: transform 1s ease;
+    }
+
+    &:hover {
+      &::before {
+        transform: scale(1.2);
+      }
+    }
   }
+
+
 
   &__title {
     position: absolute;

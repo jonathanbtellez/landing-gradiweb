@@ -651,10 +651,23 @@ main {
 .collection-items__image {
   position: relative;
   height: 25rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.collection-items__image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: var(--background-image);
   background-size: cover;
-  border-radius: 0.5rem;
   background-position: 50%;
+  transition: transform 1s ease;
+}
+.collection-items__image:hover::before {
+  transform: scale(1.2);
 }
 .collection-items__title {
   position: absolute;
