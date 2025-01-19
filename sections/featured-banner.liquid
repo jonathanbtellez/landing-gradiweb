@@ -1,0 +1,46 @@
+<section class="featured-banner">
+  <div class="banner--active">
+    <div class="banner__box banner__box--desktop">
+      <img
+        alt="hero-img"
+        width="1360"
+        height="600"
+        class="banner__image banner__image--desktop"
+        src="{{'/assets/imgs/hero_banner_img.avif' |  asset_url}}"
+        style="color: transparent;"
+      >
+      <div class="banner__content">
+        <a href={{settings['hero-banner'].settings.button_link }}
+          ><button
+            name="simple-button"
+            class="banner__button"
+          >
+            <p class="banner__text">{{settings['hero-banner'].settings.button_text }}</p>
+          </button></a
+        >
+      </div>
+    </div>
+    <div class="banner__box banner__box--mobile">
+      <img
+        alt="hero-img"
+        width="0"
+        height="532"
+        class="banner__image banner__image--mobile"
+        src="{{'/assets/imgs/hero_banner_img.avif' |  asset_url}}"
+        style="color: transparent;"
+      >
+      <div class="banner__content banner__content--mobile"> 
+        <div class="banner__button__box">
+          <a class="banner__link" href={{settings['hero-banner'].settings.button_link }}
+            ><button
+              name="simple-button"
+              class="banner__button"
+            >
+              <p class="banner__text banner__text--mobile">{{settings['hero-banner'].settings.button_text }}</p>
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

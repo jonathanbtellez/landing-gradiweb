@@ -7,11 +7,11 @@
         "background_color": "#ffffff"
       }
     },
-    "featured-header": {
-      "type": "featured-header",
+    "featured-topbar": {
+      "type": "featured-topbar",
       "settings": {
-        "heading": "Hello word",
-        "background_color": "#000"
+        "text": "Hello word",
+        "times": 10
       }
     },
     "hero-banner": {

@@ -15,7 +15,7 @@ a {
 body {
   margin: 0;
   font-family: monospace;
-  background: url("/assets/bg.webp") repeat, rgb(23, 23, 23);
+  background: url("/assets/imgs/bg.webp") repeat, rgb(23, 23, 23);
   color: #FFFFFF;
 }
 
@@ -28,42 +28,70 @@ main {
   }
 }
 
-.navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  background-color: rgba(35, 33, 40, 0.3);
-  backdrop-filter: blur(16);
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
-
-.topbar {
+.marquee {
   display: flex;
   width: 100%;
-  height: 2rem;
   align-items: center;
+}
+.marquee--topbar {
+  height: 2rem;
   background-color: #762CFB;
 }
-.topbar__content {
+.marquee--banner {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+  background: radial-gradient(circle, rgba(19, 19, 19, 0) 57%, rgb(37, 37, 37) 100%);
+}
+@media (min-width: 965px) {
+  .marquee--banner {
+    margin-bottom: 2rem;
+  }
+}
+.marquee__content {
   --gap: 1rem;
   display: flex;
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
 }
-.topbar__content__text {
+.marquee__content__text {
   flex-shrink: 0;
   display: flex;
   justify-content: space-around;
   gap: var(--gap);
   min-width: 100%;
-  animation: scroll 15s linear infinite;
+  animation: marquee 60s linear infinite;
 }
-.topbar__content__text__item {
+.marquee__content__text--banner {
+  animation: marquee 240s linear infinite;
+}
+.marquee__content__text__item {
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+.marquee__text {
+  margin-left: 20px;
+  font-size: 55px;
+  font-weight: bold;
+  line-height: 56.45px;
+}
+@media (max-width: 965px) {
+  .marquee__text {
+    margin-left: 32px;
+    font-size: 88px;
+    line-height: 88.7px;
+  }
 }
 
 @keyframes scroll {
@@ -74,6 +102,16 @@ main {
     transform: translateX(calc(-100% - var(--gap)));
   }
 }
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: rgba(35, 33, 40, 0.3);
+  backdrop-filter: blur(10px);
+}
+
 .header {
   position: relative;
   padding-right: 0.75rem;
@@ -354,6 +392,7 @@ main {
 .header-cart__button {
   min-height: 0;
   min-width: 0;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -383,6 +422,128 @@ main {
   .header-cart__button {
     min-width: 60px;
   }
+}
+
+.featured-banner {
+  margin: auto;
+  max-width: 1440px;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .featured-banner {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.banner__box {
+  position: relative;
+  display: none;
+  border-radius: 0.5rem;
+}
+.banner__box--desktop {
+  display: none;
+}
+.banner__box--mobile {
+  display: block;
+}
+@media (min-width: 965px) {
+  .banner__box--desktop {
+    display: block;
+  }
+  .banner__box--mobile {
+    display: none;
+  }
+}
+.banner__image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.banner__image--desktop {
+  height: 100%;
+}
+.banner__image--mobile {
+  display: block;
+  height: 33.25rem;
+}
+@media (min-width: 965px) {
+  .banner__image--mobile {
+    display: none;
+  }
+}
+.banner__content {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+.banner__content--mobile {
+  left: 0;
+  width: 100%;
+}
+@media (min-width: 965px) {
+  .banner__content--mobile {
+    left: 2rem;
+  }
+}
+.banner__button__box {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.banner__link {
+  margin: auto;
+  width: fit-content;
+}
+.banner__button {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: inline-flex;
+  transition-duration: 75ms;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  height: 4.5rem;
+  min-height: 0px;
+  min-width: 0px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-color: #762CFB;
+}
+.banner__button:hover {
+  background-color: rgba(118, 44, 251, 0.7);
+}
+@media (min-width: 965px) {
+  .banner__button {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    min-width: 117px;
+  }
+}
+.banner__text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  color: #FFFFFF;
+}
+.banner__text--mobile {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.banner--active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=styles.css.map */

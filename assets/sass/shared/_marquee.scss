@@ -1,0 +1,77 @@
+@use "../config/variables";
+@use "../config/utilities";
+@use "../shared/mixins";
+
+.marquee {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    &--topbar {
+        height: utilities.handleModifySizeToRem(8);
+        background-color: variables.$ss-primary-color;
+    }
+
+    &--banner {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: utilities.handleModifySizeToRem(10);
+        margin-bottom: utilities.handleModifySizeToRem(12);
+        background: radial-gradient(circle, rgba(19, 19, 19, 0) 57%, rgb(37 37 37) 100%);
+
+        @media (min-width: 965px) {
+            margin-bottom: utilities.handleModifySizeToRem(8);
+        }
+    }
+
+    &__content {
+        --gap: 1rem;
+        display: flex;
+        overflow: hidden;
+        user-select: none;
+        gap: var(--gap);
+    }
+
+    &__content__text {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        gap: var(--gap);
+        min-width: 100%;
+        @include mixins.marquee-efect(60s);
+
+        &--banner {
+            @include mixins.marquee-efect(240s);
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    &__text {
+        margin-left: 20px;
+        font-size: 55px;
+        font-weight: bold;
+        line-height: 56.45px;
+
+        @media (max-width: 965px) {
+            margin-left: 32px;
+            font-size: 88px;
+            line-height: 88.7px;
+        }
+    }
+}
+
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}

@@ -20,6 +20,12 @@ app.set('view engine', 'liquid');
 
 app.use(express.static('public'));
 
+app.get('/assets/imgs/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const filePath = path.join(__dirname, 'assets/imgs', filename); // Ruta completa al archivo
+  res.sendFile(filePath);
+});
+
 const products = require('./data/products.json');
 const collections = require('./data/collections.json');
 const settings = JSON.parse(fs.readFileSync('./config/settings_data.json', 'utf-8'));
