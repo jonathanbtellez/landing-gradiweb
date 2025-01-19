@@ -24,11 +24,11 @@ npm run build
 
 ## **Notas Adicionales**
 
-Para la solucion de esta pruba tecnica se usaron diferentes enfoques que permitieron llegar al resultado presentado 
+Para la solucion de esta prueba tecnica se usaron diferentes enfoques que permitieron llegar al resultado presentado 
 
 ### Estilos
 
-Los estilos se encuentran el la carpeta assets/sass la cual esta dividida en diferente folder que separan modularmente los estilos de la landing
+Los estilos se encuentran el la carpeta assets/sass la cual esta dividida en diferentes folders que separan modularmente los estilos de la landing
 
 #### Components
 
@@ -36,7 +36,7 @@ Los archivos aqui se encargan de manejar los estilos usados para las secciones
 
 ####  Config 
 
-En este folder se encuentran funciones variables y el archivo base que se encarga de hacer un pequeño reset de los estilos del navegador
+En este folder se encuentran funciones, variables y el archivo base que se encarga de hacer un pequeño reset de los estilos del navegador
 
 #### Shared
 
@@ -47,7 +47,6 @@ En este folder se encuentra los archivos de estilos que se comparten entre otro 
 Para evitar la duplicidad de codigo se uso en vario casoss funciones o sintaxis de liquid.
 
 Se creo un archivo en la carpeta assets/js un archivo index.js el cual controla el evento "click" para dar la funcionalidad del menu mobile
-
 
 ### Mejoras
 
